@@ -1,0 +1,44 @@
+﻿<div class="header">
+    <div class="my-container">
+        <div class="info-nav">
+            <a href="" class="logo">
+                <i class="fa-solid fa-book-open-reader fa-xl"></i>
+                المنصة
+            </a>
+            <AuthorizeView>
+                <Authorized>
+                    <h1> | </h1>
+                    <a href="Profile/@context.User.Identity.Name" class="logo">أهـلا @context.User.Identity.Name</a>
+                </Authorized>
+            </AuthorizeView>
+        </div>
+        <div class="main-nav">
+            <AuthorizeView Roles="Admin">
+                <Authorized>
+                    <a href="Admin">المسئول</a>
+                </Authorized>
+            </AuthorizeView>
+            <a href="/">الرئيسية</a>
+            <a href="Grades">الكورسات</a>
+            <a href="">التواصل</a>
+
+            <AuthorizeView>
+                <Authorized>
+                    <a href="Logout" class="register">
+                        تسجيل الخروج
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </Authorized>
+
+                <NotAuthorized>
+                    <a href="Login" class="login">تسجيل دخول</a>
+                    <a href="Register" class="register">
+                        حساب جديد
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </NotAuthorized>
+            </AuthorizeView>
+
+        </div>
+    </div>
+</div>

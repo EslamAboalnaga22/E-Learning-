@@ -1,0 +1,23 @@
+﻿@page "/Admin"
+
+@attribute [Authorize(Roles ="Admin")]
+
+<PageTitle>المسئول</PageTitle>
+
+<TopMenu></TopMenu>
+
+<div class="main">
+    <div class="my-container">
+        <a href="UsersList" class="module-card">
+            <h1>الـمـسـتـخـدمـيـن</h1>
+            <p>بيانات المستخدمين</p>
+            <p>التحكم في المسئوليات</p>
+        </a>
+        <a href="Roles" class="module-card">
+            <h1>الـمـسـئـولـيـات</h1>
+            <p>اضافة مسئولية</p>
+            <p>تعديل مسئولية</p>
+            <p>حذف مسئولية</p>
+        </a>
+    </div>
+</div>

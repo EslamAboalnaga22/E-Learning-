@@ -1,0 +1,54 @@
+﻿@page "/Login"
+
+<PageTitle>تـسـجـيـل الـدخـول</PageTitle>
+
+<div class="login">
+    <div class="my-container">
+        <EditForm Model="loginModel" OnValidSubmit="LoginAsync" class="edit-form">
+            <DataAnnotationsValidator />
+
+            <h2>تـسـجـيـل الـدخـول</h2>
+
+            <div class="username">
+                <label for="UserEmail" class="label-username">البريد الإلكتروني</label>
+                <ValidationMessage For="@(() => loginModel.Email)" />
+                <InputText class="input-username" id="UserEmail" @bind-Value="loginModel.Email"></InputText>
+            </div>
+
+            <div class="password">
+                <label for="Password" class="label-password">كلمة المرور</label>
+                <ValidationMessage For="@(() => loginModel.Password)" />
+                <InputText type="password" id="Password" class="input-password" @bind-Value="loginModel.Password"></InputText>
+            </div>
+
+            <div class="check">
+                <input class="input-check" type="checkbox" checked="@RemeberMe" @onchange="CheckBoxChanged" />
+                <label class="label-check" for="remeberMe">البقاء مسجلاً</label>
+                <a href="ForgotPassword">هل نسيت كلمة المرور؟</a>
+            </div>
+
+            <button type="submit" class="sign-in btn">الــدخــول</button>
+
+            @if (LoginErrors == true)
+            {
+                <div class="error-message" role="alert">
+                    <h5 cl>البريد الإلكتروني او كلمة المرور غير صحيحين</h5>
+                </div>
+            }
+
+            <h5>هل انت مستخدم جديد؟ <a href="Register">قم بالتسجيل الآن</a></h5>
+
+            <a href="/" class="home btn">العودة إلى الصفحة الرئيسية</a>
+        </EditForm>
+    </div>
+    <div class="image">
+        <h1>مـرحـبـا بـعـودتـك</h1>
+        <img src="images/assets/student-vertical.jpg" alt="" />
+    </div>
+</div>
+
+<style>
+    input:not([type=checkbox]) {
+        direction: ltr;
+    }
+</style>

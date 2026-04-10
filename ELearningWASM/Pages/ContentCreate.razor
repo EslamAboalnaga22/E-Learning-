@@ -1,0 +1,55 @@
+﻿@page "/CreateContent"
+
+@attribute [Authorize(Roles = "Admin, Creator")]
+
+<PageTitle>إضـافـة مـحـتـوى جـديـدة</PageTitle>
+
+<TopMenu></TopMenu>
+
+@if (ErrorMessages != "")
+{
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+else {
+<div class="content">
+    <div class="my-container">
+        <div class="border-line">
+            <h3>إضـافـة مـحـتـوى جـديـد</h3>
+
+            <EditForm Model="Content" OnValidSubmit="Create">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="content-title">
+                    <label for="ContentTitle" class="label-title">الـعـنـوان (عـنـوان الـمـحـتـوى) : </label>
+                    <InputText class="input-title" id="ContentTitle" @bind-Value="Content.Title"></InputText>
+                    <ValidationMessage For="@(() => Content.Title)" />
+                </div>
+
+                <div class="content-lesson">
+                    <label for="ContentLesson" placeholder="اخـتـر الـدرس" class="label-content">الـدرس : </label>
+                    <InputSelect id="ContentLesson" @bind-Value="Content.LessonId" class="input-grade">
+                        <option value="0">-- اخـتـر الـدرس --</option>
+                        @foreach (var option in Lessons)
+                        {
+                            <option value="@option.Id">@option.ModuleTitle - @option.Title</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="@(() => Content.LessonId)" />
+                </div>
+
+                <div class="content-file">
+                    <InputFile OnChange="@OnFileSelection"></InputFile>
+                    <img src="@FileUrl" style="width: 150px" />
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="save btn">الـحـفـظ</button>
+
+                    <a href="Lessons?moduleTitle=@ModuleTitle" class="course btn">العودة إلى صـفـحـة الـدروس</a>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+}

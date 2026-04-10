@@ -1,0 +1,53 @@
+﻿@page "/Courses"
+@inject SweetAlertService Swal;
+@attribute [Authorize]
+
+<PageTitle>الـكـورسـات</PageTitle>
+
+<TopMenu></TopMenu>
+
+@if (ErrorMessages != "")
+{
+    @* <div class="alert alert-danger">@ErrorMessages</div> *@
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+else{
+<div class="course">
+    <div class="my-container">
+        <h1 class="main-title">الـكـورسـات الـخـاصـة بـالـصـف</h1>
+        <AuthorizeView Roles="Admin, Creator">
+            <Authorized>
+                <a class="create btn btn-primary" href="CreateCourse?gradeId=@GradeId">اضـف صـف جـديـد</a>
+            </Authorized>
+        </AuthorizeView>
+        <div class="box">
+            @foreach (var course in Courses)
+            {
+                <div class="course-card">
+                    <img src="images/assets/gallery-01.png" />
+                    <div class="info">
+                        <h2 class="course-name">@course.Title</h2>
+                        <h3 class="course-description">@course.Description</h3>
+                        <h4 class="course-grade">@course.Grade</h4>
+                    </div>
+                    <div class="price">
+                        <h5 class="money">10$</h5>
+                        <a class="go-module" href="/Modules?descriptionCourse=@course.Description">
+                            اذهـب
+                            <i class="fa-solid fa-arrow-left"></i>
+                            </a>
+                    </div>
+                    <AuthorizeView Roles="Admin, Creator">
+                        <Authorized>
+                            <div class="admin-btns">
+                                <a class="update btn btn-info" href="/UpdateCourse/@course.Id?gradeId=@GradeId">تـحـديـث</a>
+                                <button class="delete btn btn-danger" type="button" @onclick="() => DeleteCourse(course.Id)">حــذف</button>
+                            </div>
+                        </Authorized>
+                    </AuthorizeView>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,46 @@
+﻿.profile {
+    height: calc(100vh - 75px);
+    display: flex;
+}
+.profile .my-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+}
+
+.profile .my-container .main-title{
+    font-weight:bold;
+    color: var(--main-color);
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.profile .my-container .info {
+    margin: 10px 10px 15px;
+}
+.profile .my-container .info div:not(:last-child) {
+    border-bottom: 1px solid #888;
+}
+
+.profile .my-container .info div {
+    padding-top: 10px;
+}
+
+.profile .my-container .info .first-name h6,
+.profile .my-container .info .last-name h6,
+.profile .my-container .info .user-name h6, 
+.profile .my-container .info .email h6 {
+    display: inline-block;
+    color: #777;
+}
+
+.profile .my-container .info .first-name h3,
+.profile .my-container .info .last-name h3,
+.profile .my-container .info .user-name h3,
+.profile .my-container .info .email h3 {
+    display: inline-block;
+    color: var(--main-color);
+}

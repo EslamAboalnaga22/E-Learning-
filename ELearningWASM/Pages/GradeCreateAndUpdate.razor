@@ -1,0 +1,60 @@
+﻿@page "/CreateGrade"
+@page "/UpdateGrade/{gradeId}"
+
+@attribute [Authorize(Roles = "Admin, Creator")]
+
+@if (!string.IsNullOrEmpty(gradeId))
+{
+    <PageTitle>تـحـديـث الـصـف</PageTitle>
+}
+else
+{
+    <PageTitle>إضـافـة صـف جـديـد</PageTitle>
+}
+
+<TopMenu></TopMenu>
+
+@if (ErrorMessages != "")
+{
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+else {
+<div class="grade-create-update">
+    <div class="my-container">
+       <div class="border-line">
+            @if (!string.IsNullOrEmpty(gradeId))
+            {
+                <h3>تـحـديـث الـصـف</h3>
+            }
+            else
+            {
+                <h3>إضـافـة صـف جـديـد</h3>
+            }
+
+            <EditForm Model="Grade" OnValidSubmit="CreateAndUpdateGrade">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                @if (!string.IsNullOrEmpty(ErrorMessages))
+                {
+                    <div class="alert alert-danger">
+                        <h3>@ErrorMessages</h3>
+                    </div>
+                }
+
+                <div class="grade-name">
+                    <label for="GradeName" class="label-name">اسـم الـصـف : </label>
+                    <InputText class="input-name" id="GradeName" @bind-Value="Grade.Name"></InputText>
+                    <ValidationMessage For="@(() => Grade.Name)" />
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="save btn">الـحـفـظ</button>
+
+                    <a href="/Grades" class="grade btn">العودة إلى صـفـحـة اخـتـيـار الـصـف</a>
+                </div>
+            </EditForm>
+       </div>
+    </div>
+</div>
+}

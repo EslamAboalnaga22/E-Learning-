@@ -1,0 +1,88 @@
+﻿.module .my-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.module .my-container .main-title{
+    font-weight:bold;
+    color: var(--main-color);
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.module .my-container .create{
+    margin-bottom: 40px;
+    display:inline-block;
+    text-align: center;
+    width: fit-content;
+}
+
+.module .my-container .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.module .my-container .module-card {
+    box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+    background-color: white;
+    border-radius: 6px;
+    transition: transform  var(--main-transition), box-shadow var(--main-transition);
+    transition: var(--main-transition);
+}
+
+.module .my-container .module-card:hover {
+    transform: translateY(-10px);
+}
+
+.module .my-container .module-card .info {
+    margin: 10px 10px 15px;
+}
+
+.module .my-container .module-card .info .title h6,
+.module .my-container .module-card .info .description h6, 
+.module .my-container .module-card .info .course h6 {
+    display: inline-block;
+    color: #777;
+}
+
+.module .my-container .module-card .info .title h3,
+.module .my-container .module-card .info .description h3,
+.module .my-container .module-card .info .course h3 {
+    display: inline-block;
+    color: var(--main-color);
+}
+
+.module .my-container .module-card .go-lesson {
+    text-align: left;
+}
+
+.module .my-container .module-card .go-lesson a {
+    border: 1px solid transparent;
+    font-size: 20px;
+    width:fit-content;
+/*    padding: 5px;*/
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    transition: var(--main-transition);
+}
+
+.module .my-container .module-card .go-lesson i {
+    padding-right: 10px;
+    animation: moving-arrow 1s reverse infinite;
+}
+
+.module .my-container .module-card .admin-btns {
+    margin: 15px;
+    text-align: right;
+}
+
+@keyframes moving-arrow {
+    100% {
+        transform: translate(5px);
+    }
+}

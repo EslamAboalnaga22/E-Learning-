@@ -1,0 +1,40 @@
+﻿@page "/Grades"
+@inject SweetAlertService Swal;
+<PageTitle>الـصـفـوف</PageTitle>
+
+<TopMenu></TopMenu>
+
+@if (ErrorMessages != "")
+{
+    @* <div class="alert alert-danger">@ErrorMessages</div> *@
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+
+else{
+<div class="grades">
+    <div class="my-container">
+        <h1 class="main-title">اخـتـر الـصـف الـخـاص بـك</h1>
+        <AuthorizeView Roles="Admin, Creator">
+            <Authorized>
+                <a class="create btn btn-primary" href="CreateGrade">اضـف صـف جـديـد</a>
+            </Authorized>
+        </AuthorizeView>
+        @foreach (var grade in Grades)
+        {
+            <a href="Courses?gradeId=@grade.Id" class="info">
+                <h2>@grade.Name</h2>
+                    <AuthorizeView Roles="Admin, Creator">
+                        <Authorized>
+                            <div class="admin-btns">
+                                <a class="update btn btn-info" href="/UpdateGrade/@grade.Id">تـحـديـث</a>
+                                <button class="delete btn btn-danger" type="button" @onclick="() => DeleteGrade(grade.Id)">حــذف</button>
+                            </div>
+                        </Authorized>
+                    </AuthorizeView>
+            </a>
+        }
+    </div>
+</div>
+}
+
+

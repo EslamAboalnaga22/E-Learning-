@@ -1,0 +1,63 @@
+﻿.course-create-update .my-container {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course-create-update .my-container .border-line{
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    padding: 0 30px;
+}
+
+.course-create-update .my-container h3 {
+    padding: 20px 0;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.course-create-update .my-container .course-title, 
+.course-create-update .my-container .course-description,
+.course-create-update .my-container .course-grade {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-create-update .my-container .course-title .label-title,
+.course-create-update .my-container .course-description .label-description,
+.course-create-update .my-container .course-grade .label-grade {
+    text-align: center;
+    padding-bottom: 5px;
+    color: #777;
+}
+
+input[type="text"] {
+    background-color:rebeccapurple;
+}
+
+.course-create-update .my-container .buttons {
+    padding:40px 0 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-create-update .my-container .buttons .save {
+    margin-bottom:20px;
+    border: 1px solid transparent;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+}
+
+.course-create-update .my-container .buttons .course {
+    border: 1px solid transparent;
+    font-size: 18px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: white;
+    color: var(--main-color);
+    font-weight: bold;
+}

@@ -1,0 +1,45 @@
+﻿@page "/UsersList"
+
+@attribute [Authorize(Roles ="Admin")]
+
+<PageTitle>المستخدمين</PageTitle>
+
+@if (ErrorMessages != "")
+{
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+else
+{
+    <TopMenu></TopMenu>
+
+    <div class="users">
+        <div class="my-container">
+            <h1 class="main-title">قـائـمـة الـمـسـتـخـدمـيـن</h1>
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اسم المستخدم</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>المسئوليات</th>
+                            <th>التحكم في المسئوليات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Users)
+                        {
+                            <tr>
+                                <td>@user.UserName</td>
+                                <td>@user.Email</td>
+                                <td>@user.UserRoles</td>
+                                <td><a class="btn btn-info" href="/GetUserRoles/@user.Id">الـتـعـديـل</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,95 @@
+<<<<<<< HEAD
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearning.Api", "ELearning.Api\ELearning.Api.csproj", "{4012FF46-7C60-493F-836B-C137FFF942DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearning.Application", "ELearning.Application\ELearning.Application.csproj", "{6A02FAF3-560D-4918-A21D-2CBF5A71B274}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearning.Core", "ELearning.Core\ELearning.Core.csproj", "{8B16CA85-74B8-4B3E-B518-5A8F24F0B2FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearning.Infrastructure", "ELearning.Infrastructure\ELearning.Infrastructure.csproj", "{628BE79B-4641-433D-9106-211191E5A379}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearningWASM", "ELearningWASM\ELearningWASM.csproj", "{3C69E9AC-1803-408D-9845-60664727017D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4012FF46-7C60-493F-836B-C137FFF942DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4012FF46-7C60-493F-836B-C137FFF942DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4012FF46-7C60-493F-836B-C137FFF942DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4012FF46-7C60-493F-836B-C137FFF942DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A02FAF3-560D-4918-A21D-2CBF5A71B274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A02FAF3-560D-4918-A21D-2CBF5A71B274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A02FAF3-560D-4918-A21D-2CBF5A71B274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A02FAF3-560D-4918-A21D-2CBF5A71B274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B16CA85-74B8-4B3E-B518-5A8F24F0B2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B16CA85-74B8-4B3E-B518-5A8F24F0B2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B16CA85-74B8-4B3E-B518-5A8F24F0B2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B16CA85-74B8-4B3E-B518-5A8F24F0B2FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{628BE79B-4641-433D-9106-211191E5A379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{628BE79B-4641-433D-9106-211191E5A379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{628BE79B-4641-433D-9106-211191E5A379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{628BE79B-4641-433D-9106-211191E5A379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C69E9AC-1803-408D-9845-60664727017D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C69E9AC-1803-408D-9845-60664727017D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C69E9AC-1803-408D-9845-60664727017D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C69E9AC-1803-408D-9845-60664727017D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearning.Api", "ELearning.Api\ELearning.Api.csproj", "{4012FF46-7C60-493F-836B-C137FFF942DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearning.Application", "ELearning.Application\ELearning.Application.csproj", "{6A02FAF3-560D-4918-A21D-2CBF5A71B274}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearning.Core", "ELearning.Core\ELearning.Core.csproj", "{8B16CA85-74B8-4B3E-B518-5A8F24F0B2FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearning.Infrastructure", "ELearning.Infrastructure\ELearning.Infrastructure.csproj", "{628BE79B-4641-433D-9106-211191E5A379}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearningWASM", "ELearningWASM\ELearningWASM.csproj", "{3C69E9AC-1803-408D-9845-60664727017D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4012FF46-7C60-493F-836B-C137FFF942DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4012FF46-7C60-493F-836B-C137FFF942DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4012FF46-7C60-493F-836B-C137FFF942DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4012FF46-7C60-493F-836B-C137FFF942DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A02FAF3-560D-4918-A21D-2CBF5A71B274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A02FAF3-560D-4918-A21D-2CBF5A71B274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A02FAF3-560D-4918-A21D-2CBF5A71B274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A02FAF3-560D-4918-A21D-2CBF5A71B274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B16CA85-74B8-4B3E-B518-5A8F24F0B2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B16CA85-74B8-4B3E-B518-5A8F24F0B2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B16CA85-74B8-4B3E-B518-5A8F24F0B2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B16CA85-74B8-4B3E-B518-5A8F24F0B2FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{628BE79B-4641-433D-9106-211191E5A379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{628BE79B-4641-433D-9106-211191E5A379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{628BE79B-4641-433D-9106-211191E5A379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{628BE79B-4641-433D-9106-211191E5A379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C69E9AC-1803-408D-9845-60664727017D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C69E9AC-1803-408D-9845-60664727017D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C69E9AC-1803-408D-9845-60664727017D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C69E9AC-1803-408D-9845-60664727017D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+>>>>>>> baf02eb (initial commit)

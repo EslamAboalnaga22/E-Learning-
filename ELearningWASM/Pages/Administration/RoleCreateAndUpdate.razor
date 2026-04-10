@@ -1,0 +1,60 @@
+﻿@page "/CreateRole"
+@page "/UpdateRole/{RoleId}"
+
+@attribute [Authorize(Roles = "Admin")]
+
+@if (!string.IsNullOrEmpty(RoleId))
+{
+    <PageTitle>تـحـديـث الـمـسـئـولـيـة</PageTitle>
+}
+else
+{
+    <PageTitle>إضـافـة مـسـئـولـيـة جـديـدة</PageTitle>
+}
+
+<TopMenu></TopMenu>
+
+@if (ErrorMessages != "")
+{
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+else
+{
+    <div class="role-create-update">
+        <div class="my-container">
+            <div class="border-line">
+                @if (!string.IsNullOrEmpty(RoleId))
+                {
+                    <h3>تـحـديـث الـمـسـئـولـيـة</h3>
+                }
+                else
+                {
+                    <h3>إضـافـة مـسـئـولـيـة جـديـدة</h3>
+                }
+
+                <EditForm Model="Role" OnValidSubmit="CreateAndUpdateRole">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+
+                    <div class="role-name">
+                        <label for="RoleName" class="label-name">اسـم الـمـسـئـولـيـة : </label>
+                        <InputText class="input-name" id="RoleName" @bind-Value="Role.Name"></InputText>
+                        <ValidationMessage For="@(() => Role.Name)" />
+                    </div>
+
+                    <div class="buttons">
+                        <button type="submit" class="save btn">الـحـفـظ</button>
+
+                        <a href="/Roles" class="role btn">العودة إلى صـفـحـة الـمـسـئـولـيـات</a>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+    input:not([type=checkbox]) {
+        direction: ltr;
+    }
+</style>

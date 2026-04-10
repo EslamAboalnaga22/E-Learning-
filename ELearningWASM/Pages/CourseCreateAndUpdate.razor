@@ -1,0 +1,78 @@
+﻿@page "/CreateCourse"
+@page "/UpdateCourse/{courseId}"
+
+@attribute [Authorize(Roles = "Admin, Creator")]
+
+@if (!string.IsNullOrEmpty(CourseId))
+{
+    <PageTitle>تـحـديـث الـصـف</PageTitle>
+}
+else
+{
+    <PageTitle>إضـافـة صـف جـديـد</PageTitle>
+}
+
+<TopMenu></TopMenu>
+
+@if (ErrorMessages != "")
+{
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+else {
+<div class="course-create-update">
+    <div class="my-container">
+        <div class="border-line">
+            @if (!string.IsNullOrEmpty(CourseId))
+            {
+                <h3>تـحـديـث الـكـورس</h3>
+            }
+            else
+            {
+                <h3>إضـافـة كـورس جـديـد</h3>
+            }
+
+            <EditForm Model="Course" OnValidSubmit="CreateAndUpdateCourse">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                @if (!string.IsNullOrEmpty(ErrorMessages))
+                {
+                    <div class="alert alert-danger">
+                        <h3>@ErrorMessages</h3>
+                    </div>
+                }
+
+                <div class="course-title">
+                    <label for="CourseTitle" class="label-title">الـعـنـوان (اسـم الـمادة) : </label>
+                    <InputText class="input-title" id="CourseTitle" @bind-Value="Course.Title"></InputText>
+                    <ValidationMessage For="@(() => Course.Title)" />
+                </div>
+
+                <div class="course-description">
+                    <label for="CourseDescription" class="label-description">الوصـف (اسـم الـوحـدة)  : </label>
+                    <InputText class="input-description" id="CourseDescription" @bind-Value="Course.Description"></InputText>
+                    <ValidationMessage For="@(() => Course.Description)" />
+                </div>
+
+                <div class="course-grade">
+                    <label for="CourseGrade" placeholder="اخـتـر الـصـف" class="label-grade">الـصـف : </label>
+                    <InputSelect id="CourseGrade" @bind-Value="Course.GradeId" class="input-grade">
+                        <option value="0">-- اخـتـر الـصـف --</option>
+                        @foreach (var option in Grades)
+                        {
+                            <option value="@option.Id">@option.Name</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="@(() => Course.GradeId)" />
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="save btn">الـحـفـظ</button>
+
+                    <a href="/Courses?gradeId=@GradeId" class="course btn">العودة إلى صـفـحـة اخـتـيـار الـكـورس</a>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+}

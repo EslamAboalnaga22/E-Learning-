@@ -1,0 +1,68 @@
+﻿@page "/Register"
+
+<PageTitle>التـسـجـيـل</PageTitle>
+
+<div class="register">
+    <div class="my-container">
+        <EditForm Model="RegisterModel" OnValidSubmit="RegisterAsync" class="edit-form">
+            <DataAnnotationsValidator />
+            @* <ValidationSummary /> *@
+            <h2>التـسـجـيـل</h2>
+
+            <div class="first-last">
+                <div class="firstname">
+                    <label for="Firstname" class="label-firstname">الاسم الأول</label>
+                    <ValidationMessage For="@(() => RegisterModel.FirstName)" />
+                    <InputText class="input-firstname" id="Firstname" @bind-Value="RegisterModel.FirstName"></InputText>
+                </div>
+
+                <div class="lastname">
+                    <label for="Lastname" class="label-lastname">الاسم الأخير</label>
+                    <ValidationMessage For="@(() => RegisterModel.LastName)" />
+                    <InputText class="input-lastname" id="Lastname" @bind-Value="RegisterModel.LastName"></InputText>
+                </div>
+            </div>
+            
+            <div class="useremail">
+                <label for="UserEmail" class="label-useremail">البريد الإلكتروني</label>
+                <ValidationMessage For="@(() => RegisterModel.Email)" />
+                <InputText class="input-useremail" id="UserEmail" @bind-Value="RegisterModel.Email"></InputText>
+            </div>
+
+            <div class="password">
+                <label for="Password" class="label-password">كلمة المرور</label>
+                <ValidationMessage For="@(() => RegisterModel.Password)" />
+                <InputText type="password" id="Password" class="input-password" @bind-Value="RegisterModel.Password"></InputText>
+            </div>
+            
+            <div class="confirmpassword">
+                <label for="Confirmpassword" class="label-confirmpassword">تأكيد كلمة المرور</label>
+                <ValidationMessage For="@(() => RegisterModel.ConfirmPassword)" />
+                <InputText type="password" id="Confirmpassword" class="input-confirmpassword" @bind-Value="RegisterModel.ConfirmPassword"></InputText>
+            </div>
+
+            <button type="submit" class="sign-in btn">الــدخــول</button>
+
+            @if (RegisterErrors == true)
+            {
+                <div class="error-message" role="alert">
+                    <h5>البريد الإلكتروني او اسم المستخدم موجود بالفعل</h5>
+                </div>
+            }
+
+            <h5>هل تمتلك حساب بالفعل؟ <a href="Login">قم بالدخول الآن</a></h5>
+
+            <a href="/" class="home btn">العودة إلى الصفحة الرئيسية</a>
+        </EditForm>
+    </div>
+    <div class="image">
+        <h1>مـرحبا بــك في المنصىة</h1>
+        <img src="images/assets/student-vertical.jpg" alt="" />
+    </div>
+</div>
+
+<style>
+    input:not([type=checkbox]) {
+        direction: ltr;
+    }
+</style>

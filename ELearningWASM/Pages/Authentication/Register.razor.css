@@ -1,0 +1,132 @@
+﻿.register {
+    display: flex;
+}
+
+@media (max-width:768px) {
+    .register {
+        text-align: center;
+    }
+}
+
+.register .my-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width:768px) {
+    .register .my-container {
+        width: 100%;
+    }
+}
+
+.register .my-container h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.register .my-container .first-last{
+    display:flex;
+    justify-content: space-between;
+}
+
+.register .my-container .firstname,
+.register .my-container .lastname,
+.register .my-container .username,
+.register .my-container .useremail,
+.register .my-container .password,
+.register .my-container .confirmpassword {
+    margin-bottom: 20px;
+}
+
+.register .my-container .firstname .label-firstname,
+.register .my-container .lastname .label-lastname,
+.register .my-container .username .label-username,
+.register .my-container .useremail .label-useremail,
+.register .my-container .password .label-password,
+.register .my-container .confirmpassword .label-confirmpassword {
+    margin-bottom: 5px;
+    color: #777;
+}
+
+.register .my-container .sign-in {
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    width: 100%;
+}
+
+.register .my-container .error-message h5 {
+    font-size: 16px;
+    text-align: center;
+    color: #777;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.register .my-container h5 {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.register .my-container h5 a {
+    color: var(--main-color);
+}
+
+.register .my-container .home {
+    border: 1px solid transparent;
+    font-size: 18px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: var(--main-color-alt);
+    color: var(--main-color);
+    font-weight: bold;
+    width: 100%;
+}
+
+.register .image {
+    width: 50%;
+    position: relative;
+}
+
+@media (max-width:768px) {
+    .register .image {
+        display: none;
+    }
+}
+
+.register .image:before {
+    width: 50%;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-color);
+    opacity: 0.8;
+}
+
+.register .image img {
+    width: 100%;
+    height: 100vh;
+}
+
+.register .image h1 {
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;
+    text-align:center;
+    line-height:1.8;
+    word-spacing:5px;
+}

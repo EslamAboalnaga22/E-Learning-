@@ -1,0 +1,29 @@
+﻿.users .my-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.users .my-container .main-title{
+    font-weight:bold;
+    color: var(--main-color);
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.users .my-container .table-card table{
+    border-collapse: collapse;
+    width:100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    color: var(--main-color);
+}
+
+

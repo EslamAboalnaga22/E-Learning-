@@ -1,0 +1,130 @@
+﻿.login {
+    height: calc(100vh);
+    display:flex;
+}
+
+@media (max-width:768px) {
+    .login  {
+        text-align:center;
+    }
+}
+
+.login .my-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width:768px) {
+    .login .my-container {
+        width: 100%;
+    }
+}
+
+.login .my-container h2 {
+    margin-bottom:20px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.login .my-container .username,
+.login .my-container .password {
+    margin-bottom:20px;
+}
+
+.login .my-container .username .label-username,
+.login .my-container .password .label-password {
+    margin-bottom:5px;
+    color: #777;
+}
+
+.login .my-container .check .label-check {
+    margin-bottom: 20px;
+    color: #777;
+}
+
+.login .my-container .check a {
+    margin-right: 60px;
+    color: var(--main-color);
+}
+
+.login .my-container .sign-in{
+    margin-bottom:20px;
+    border: 1px solid transparent;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    width: 100%;
+}
+
+
+.login .my-container .error-message h5 {
+    font-size: 16px;
+    text-align: center;
+    color: #777;
+    font-weight: bold;
+    background-color:white;
+    border-radius:10px;
+    padding:5px;
+}
+
+.login .my-container h5 {
+    margin-bottom:40px;
+}
+
+.login .my-container h5 a {
+    color: var(--main-color);
+}
+
+.login .my-container .home {
+    border: 1px solid transparent;
+    font-size: 18px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: var(--main-color-alt);
+    color: var(--main-color);
+    font-weight: bold;
+    width: 100%;
+}
+
+.login .image {
+    width:50%;
+    position:relative;
+}
+
+@media (max-width:768px) {
+    .login .image {
+        display:none;
+    }
+}
+
+.login .image:before {
+    width:50%;
+    content:'';
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-color: var(--main-color);
+    opacity:0.8;
+}
+
+.login .image img {
+    width: 100%;
+    height: 100vh;
+}
+
+.login .image h1 {
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.8;
+    word-spacing: 5px;
+}

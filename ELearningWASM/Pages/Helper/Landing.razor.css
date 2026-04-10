@@ -1,0 +1,89 @@
+﻿.landing {
+    position: relative;
+    background-color: var(--main-color-alt);
+}
+
+.landing .container {
+    min-height: calc(100vh - 75px);
+    display:flex;
+    justify-content: space-between;
+}
+
+.landing .landing-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    line-height:3;
+}
+
+.landing .landing-text h4 {
+    color: var(--main-color)
+}
+
+.landing .landing-text h1 {
+    line-height: 1.6;
+}
+
+.landing .landing-text p {
+    color: #777;
+}
+
+.landing .landing-text .landing-btns a:first-child {
+    border: 1px solid transparent;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #777;
+    font-weight: bold;
+    color: white;
+    margin-left:10px;
+}
+
+.landing .landing-text .landing-btns a:last-child {
+    border: 1px solid transparent;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white !important;
+    font-weight: bold;
+}
+
+.landing .landing-images {
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 30px;
+    position:relative;
+}
+
+@media(max-width: 992px) {
+    .landing .landing-images {
+        display:none;
+    }
+}
+
+.landing .landing-images .right-img {
+    display: grid;
+    align-content: space-between;
+}
+    
+.landing .landing-images .right-img img {
+    width: 250px;
+    height: calc((100vh - 120px)/2);
+    border-radius: 10px;
+}
+
+.landing .landing-images .right-img div {
+    width: 250px;
+    height: calc((100vh - 210px)/2);
+    border-radius: 10px;
+    background-color: var(--main-color);
+}
+
+.landing .landing-images .left-img img {
+    width: 250px;
+    height: calc(100vh - 135px);
+    border-radius: 10px;
+}
+

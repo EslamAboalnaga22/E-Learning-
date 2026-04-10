@@ -1,0 +1,111 @@
+﻿.course .my-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.course .my-container .main-title{
+    font-weight:bold;
+    color: var(--main-color);
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.course .my-container .create{
+    margin-bottom: 40px;
+    display:inline-block;
+    text-align: center;
+    width: fit-content;
+}
+
+.course .my-container .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.course .my-container .course-card{
+    box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform  var(--main-transition), box-shadow var(--main-transition);
+}
+
+.course .my-container .course-card img {
+    max-width: 100%;
+}
+
+.course .my-container .course-card .info{
+    padding: 10px;
+    text-align: center;
+}
+
+.course .my-container .course-card .info .course-name{
+    color: var(--main-color);
+}
+
+.course .my-container .course-card .info .course-description{
+    color: #444444;
+}
+
+.course .my-container .course-card .info .course-grade{
+    color: #888;
+}
+
+.course .my-container .course-card .price {
+    display: flex;
+    justify-content:space-between;
+    padding:10px 20px;
+    position:relative
+}
+
+.course .my-container .course-card .price:before {
+    content: '';
+    position:absolute;
+    background-color:#777;
+    top: -1px;
+    right: 0;
+    width: 100%;
+    height:1px;
+}
+
+.course .my-container .course-card .price .money {
+    color: var(--main-color);
+    position:relative;
+    border: 1px solid transparent;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--main-color-alt);
+    font-weight: bold;
+    transition: var(--main-transition);
+}
+
+.course .my-container .course-card .price .go-module {
+    border: 1px solid transparent;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    transition: var(--main-transition);
+}
+
+.course .my-container .course-card .price .go-module i {
+    padding-right: 10px;
+    animation: moving-arrow 1s reverse infinite;
+}
+
+.course .my-container .course-card .admin-btns {
+    padding: 10px;
+    text-align: center;
+}
+
+@keyframes moving-arrow {
+    100% {
+        transform: translate(5px);
+    }
+}

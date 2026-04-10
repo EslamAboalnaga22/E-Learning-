@@ -1,0 +1,78 @@
+﻿@page "/CreateModule"
+@page "/UpdateModule/{ModuleId}"
+
+@attribute [Authorize(Roles = "Admin, Creator")]
+
+@if (!string.IsNullOrEmpty(ModuleId))
+{
+    <PageTitle>تـحـديـث الـنـموذج</PageTitle>
+}
+else
+{
+    <PageTitle>إضـافـة نـموذج جـديـد</PageTitle>
+}
+
+<TopMenu></TopMenu>
+
+@if (ErrorMessages != "")
+{
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+else {
+<div class="module-create-update">
+    <div class="my-container">
+        <div class="border-line">
+            @if (!string.IsNullOrEmpty(ModuleId))
+            {
+                <h3>تـحـديـث الـنـموذج</h3>
+            }
+            else
+            {
+                <h3>إضـافـة نـموذج جـديـد</h3>
+            }
+
+            <EditForm Model="Module" OnValidSubmit="CreateAndUpdateModule">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                @if (!string.IsNullOrEmpty(ErrorMessages))
+                {
+                    <div class="alert alert-danger">
+                        <h3>@ErrorMessages</h3>
+                    </div>
+                }
+
+                <div class="module-title">
+                    <label for="ModuleTitle" class="label-title">الـعـنـوان (عـنـوان الـرئـيـسـي للـدروس) : </label>
+                    <InputText class="input-title" id="ModuleTitle" @bind-Value="Module.Title"></InputText>
+                    <ValidationMessage For="@(() => Module.Title)" />
+                </div>
+
+                <div class="module-description">
+                    <label for="ModuleDescription" class="label-description">الوصـف (وصـف العـنـوان الـرئـيـسـي)  : </label>
+                    <InputText class="input-description" id="ModuleDescription" @bind-Value="Module.Description"></InputText>
+                    <ValidationMessage For="@(() => Module.Description)" />
+                </div>
+
+                <div class="module-course">
+                    <label for="ModuleCourse" placeholder="اخـتـر الـكـورس" class="label-course">الـصـف : </label>
+                    <InputSelect id="ModuleCourse" @bind-Value="Module.CourseId" class="input-grade">
+                        <option value="0">-- اخـتـر الـكـورس --</option>
+                        @foreach (var option in Courses)
+                        {
+                            <option value="@option.Id">@option.Title - @option.Description - @option.Grade</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="@(() => Module.CourseId)" />
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="save btn">الـحـفـظ</button>
+
+                    <a href="/Modules?descriptionCourse=@CourseDescription" class="course btn">العودة إلى صـفـحـة اخـتـيـار الـنـموذج</a>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+}

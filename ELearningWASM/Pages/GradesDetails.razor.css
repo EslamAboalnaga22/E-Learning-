@@ -1,0 +1,54 @@
+﻿.grades .my-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.grades .my-container .main-title{
+    font-weight:bold;
+    color: var(--main-color);
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.grades .my-container .create {
+    margin-bottom: 40px;
+    display:inline-block;
+    text-align: center;
+    width: fit-content;
+}
+
+.grades .my-container .info{
+    border: 1px solid transparent;
+    background-color: white; 
+    margin-bottom: 30px;
+    display:flex;
+    justify-content: space-between;
+    padding:15px;
+    position:relative;
+    cursor: pointer;
+}
+
+.grades .my-container .info:before {
+    content:'';
+    position:absolute;
+    top:0px;
+    right:0px;
+    height:100%;
+    width:5px;
+    background-color:var(--main-color);
+    transition:var(--main-transition);
+}
+
+.grades .my-container .info:hover:before {
+    width:15px;
+}
+
+.grades .my-container .info h2 {
+    color: var(--main-color);
+    transition:var(--main-transition);
+}
+
+.grades .my-container .info:hover h2 {
+    padding-right:15px;
+}

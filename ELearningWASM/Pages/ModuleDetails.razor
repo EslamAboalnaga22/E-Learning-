@@ -1,0 +1,62 @@
+﻿@page "/Modules"
+@inject SweetAlertService Swal;
+@attribute [Authorize]
+
+<PageTitle>الـنـماذج</PageTitle>
+
+<TopMenu></TopMenu>
+
+@if (ErrorMessages != "")
+{
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+else{
+<div class="module">
+    <div class="my-container">
+        <h1 class="main-title">الـدروس الـخـاصـة بـالوحـدة</h1>
+        <AuthorizeView Roles="Admin, Creator">
+            <Authorized>
+                <a class="create btn btn-primary" href="CreateModule?descriptionCourse=@CourseDescription">اضـف صـف جـديـد</a>
+            </Authorized>
+        </AuthorizeView>
+        <div class="box">
+            @foreach (var module in Modules)
+            {
+                <div class="module-card">
+                    <div class="info">
+                        <div class="title">
+                            <h6>الـعـنـوان : </h6>
+                            <h3>@module.Title</h3>
+                        </div>
+                        <div class="description">
+                            <h6>وصـف الـعـنـوان : </h6>
+                            <h3>@module.Description </h3>
+                        </div>
+                        <div class="course">
+                            <h6>الـمـادة : </h6>
+                            <h3>@module.CourseTitle</h3>
+                        </div>
+                        <div class="go-lesson">
+                            <a href="Lessons?moduleTitle=@module.Title">
+                                اذهـب إلـى الـدرس
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <AuthorizeView Roles="Admin, Creator">
+                        <Authorized>
+                            <div class="admin-btns">
+                        <a class="update btn btn-info" href="/UpdateModule/@module.Id?descriptionCourse=@CourseDescription">تـحـديـث</a>
+                                <button class="delete btn btn-danger" type="button" @onclick="() => DeleteModule(module.Id)">حــذف</button>
+                            </div>
+                        </Authorized> 
+                     </AuthorizeView>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+}
+
+

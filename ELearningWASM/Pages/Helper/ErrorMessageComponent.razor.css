@@ -1,0 +1,43 @@
+﻿.error {
+    height: 100vh;
+    display: flex;
+}
+
+.error .my-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error .my-container h1 {
+    padding-bottom: 15px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.error .my-container h3 {
+    padding-bottom: 15px;
+}
+
+.error .my-container p {
+    padding-bottom: 15px;
+    color: #777;
+}
+
+.error .my-container .home {
+    border: 1px solid transparent;
+    font-size: 18px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: var(--main-color-alt);
+    color: var(--main-color);
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: var(--main-transition);
+}
+
+.error .my-container .home:hover {
+    background-color: var(--main-color);
+    color: white;
+}

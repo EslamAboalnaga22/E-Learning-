@@ -1,0 +1,64 @@
+﻿.module-create-update .my-container {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.module-create-update .my-container .border-line{
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    padding: 0 30px;
+}
+
+.module-create-update .my-container h3 {
+    padding: 20px 0;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.module-create-update .my-container .module-title, 
+.module-create-update .my-container .module-description,
+.module-create-update .my-container .module-course {
+    display: flex;
+    flex-direction: column;
+    padding-bottom:10px;
+}
+
+.module-create-update .my-container .module-title .label-title,
+.module-create-update .my-container .module-description .label-description,
+.module-create-update .my-container .module-course .label-course {
+    text-align: center;
+    padding-bottom: 5px;
+    color: #777;
+}
+
+input[type="text"] {
+    background-color:rebeccapurple;
+}
+
+.module-create-update .my-container .buttons {
+    padding: 40px 0 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.module-create-update .my-container .buttons .save {
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+}
+
+.module-create-update .my-container .buttons .course {
+    border: 1px solid transparent;
+    font-size: 18px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: white;
+    color: var(--main-color);
+    font-weight: bold;
+}

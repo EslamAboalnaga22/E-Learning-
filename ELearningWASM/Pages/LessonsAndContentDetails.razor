@@ -1,0 +1,89 @@
+﻿@page "/Lessons"
+@inject SweetAlertService Swal;
+@attribute [Authorize]
+
+<PageTitle>الـدروس</PageTitle>
+
+<TopMenu></TopMenu> 
+
+@if (ErrorMessages != "")
+{
+    @* <div class="alert alert-danger">@ErrorMessages</div> *@
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+else{
+<div class="lesson">
+    <div class="my-container">
+        <h1 class="main-title">الـدروس الـخـاصـة بـالوحـدة</h1> 
+        <AuthorizeView Roles="Admin, Creator">
+            <Authorized>
+                <div class="admin-btns-create">
+                    <a class="create btn btn-primary" href="CreateLesson?moduleTitle=@ModuleTitle">اضـف درس جـديـد</a>
+                    <a class="create btn btn-primary" href="CreateContent?moduleTitle=@ModuleTitle">اضـف محتوى جـديـد</a>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+        @foreach (var lesson in Lessons)
+        {
+            <div class="box">
+                <div class="info">
+                    <h2 class="title">@lesson.Title</h2>
+                    <h2 class="module-title">@lesson.ModuleTitle</h2>
+                    @* <i class="fa-solid fa-angles-down fa-xl" @onclick="ActiveChanged"></i> *@
+
+                    <AuthorizeView Roles="Admin, Creator">
+                        <Authorized>
+                            <div class="admin-btns-lesson">
+                                <a class="btn btn-info" href="/UpdateLesson/@lesson.Id?moduleTitle=@ModuleTitle">تـحـديـث الـدرس</a>
+                                @if (!lesson.Contents.Any())
+                                {
+                                    <button class="btn btn-danger" type="button" @onclick="() => DeleteLesson(lesson.Id)">Delete Lesson</button>
+                                }
+                            </div>
+                        </Authorized>
+                    </AuthorizeView>
+                </div>
+
+
+                @foreach (var content in @lesson.Contents)
+                {
+                    <div class="content-card @(IsActive ? "active" : "")">
+
+                        <h2>@content.Title</h2>
+                        @if (content.Type.Contains("image"))
+                        {
+                            <img src="https://localhost:7185/PDF/@content.FilePath" alt="Alternate Text" />
+                        }
+                        else if (content.Type.Contains("video"))
+                        {
+                            <video controls>
+                                <source src="https://localhost:7185/PDF/@content.FilePath" type="video/mp4">
+                                <source src="https://localhost:7185/PDF/@content.FilePath" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
+                        }
+                        else if (content.Type.Contains("pdf"))
+                        {
+                            <embed src="https://localhost:7185/PDF/@content.FilePath"
+                                   type="application/pdf"
+                                   width="80%"
+                                   height="500px" />
+                        }
+
+                        <AuthorizeView Roles="Admin, Creator">
+                            <Authorized>
+                                <div>
+                                    <a class="btn btn-info" href="/UpdateContent/@content.Id?moduleTitle=@ModuleTitle">تـحـديـث الـمـحـتـوى</a>
+                                    <button class="btn btn-danger" type="button" @onclick="() => DeleteContent(content.Id)">حـذف الـمـحـتـوى</button>
+                                </div>
+                            </Authorized>
+                        </AuthorizeView>
+
+                    </div>
+                }
+
+            </div>
+        }
+    </div>
+</div>
+}

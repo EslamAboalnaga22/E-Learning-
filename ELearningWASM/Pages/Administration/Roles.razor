@@ -1,0 +1,44 @@
+﻿@page "/Roles"
+@inject SweetAlertService Swal;
+@attribute [Authorize(Roles = "Admin")]
+
+<PageTitle>المسئوليات</PageTitle>
+
+<TopMenu></TopMenu>
+
+@if (ErrorMessages != "")
+{
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+else
+{
+    <div class="roles">
+        <div class="my-container">
+            <h1 class="main-title">قـائـمـة الـمـسـئـولـيـات</h1>
+            <a class="create btn btn-primary" href="CreateRole">إضـافـة مـسـئـولـيـة جـديـدة</a>
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>المعرف</th>
+                            <th>اسم المسئولية</th>
+                            <th>التحديث</th>
+                            <th>الحذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var role in RolesList)
+                        {
+                            <tr>
+                                <td>@role.Id</td>
+                                <td>@role.Name</td>
+                                <td><a class="btn btn-info" href="/UpdateRole/@role.Id">تـعـديـل مسئولية</a></td>
+                                <td><button class="btn btn-danger" type="button" @onclick="() => Delete(role.Id)">حـذف مسئولية</button></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,101 @@
+﻿.header {
+    background-color: white;
+    position: relative;
+    box-shadow: 0 0 10px #ddd;
+}
+
+.header .my-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.header .my-container .info-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.header .my-container .info-nav .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--main-color);
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .my-container .info-nav .logo i {
+    margin-left: 10px;
+}
+
+@media(max-width: 992px) {
+    .header .logo {
+        width: 100%;
+        height: 40px;
+    }
+}
+
+.header .my-container .info-nav h1 {
+    color: var(--main-color);
+    padding: 0 8px;
+}
+
+.header .my-container .main-nav {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media(max-width: 992px) {
+    .header .my-container .main-nav {
+        margin-bottom: 10px;
+        justify-content:center;
+    }
+}
+
+.header .my-container .main-nav a {
+    color: #777;
+    margin: 0px 10px;
+    transition: var(--main-transition);
+}
+
+.header .my-container .main-nav a:hover {
+    color: var(--main-color);
+}
+
+.header .my-container .login {
+    border: 1px solid transparent;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: var(--main-color-alt);
+    font-weight: bold;
+}
+
+.header .my-container .register {
+    border: 1px solid transparent;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white !important;
+    font-weight: bold;
+    transition: var(--main-transition);
+}
+
+.header .my-container .register i {
+    margin-right: 5px;
+}
+
+.header .my-container .register:hover {
+    border: 1px solid transparent;
+    background-color: var(--main-color-alt);
+    box-shadow: 0 0 10px #ddd;
+    color: var(--main-color) !important;
+}

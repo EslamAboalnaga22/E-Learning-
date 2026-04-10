@@ -1,0 +1,46 @@
+﻿@page "/GetUserRoles/{UserId}"
+
+@attribute [Authorize(Roles = "Admin")]
+
+<PageTitle>المسئوليات</PageTitle>
+
+<TopMenu></TopMenu>
+
+@if (ErrorMessages != "")
+{
+    <ErrorMessageComponent></ErrorMessageComponent>
+}
+else
+{
+    <div class="manage-roles">
+        <div class="my-container">
+            <div class="border-line">
+                <h1 class="main-title">تـحـديـد الـمـسـئـولـيـات</h1>
+
+                <div class="roles-card">
+                    <h3>اسـم الـمـسـتـخـدم :</h3>
+                    <h4>@UserRolesModel.UserName</h4>
+                </div>
+
+                @if (UserRolesModel.Roles != null)
+                {
+                    <EditForm Model="UserRolesModel" OnValidSubmit="Save">
+                        @foreach (var role in UserRolesModel.Roles)
+                        {
+                            <div class="manage">
+                                <input type="checkbox" @bind="role.IsSelected" />
+                                <label for="@role.IsSelected" class="form-label">@role.Name</label>
+                            </div>
+                        }
+
+                        <div class="buttons">
+                            <button type="submit" class="save btn">الـحـفـظ</button>
+
+                            <a href="UsersList" class="course btn">العودة إلى صـفـحـة الـمـسـتـخـدمـيـن</a>
+                        </div>
+                    </EditForm>
+                }
+            </div>
+        </div>
+    </div>
+}

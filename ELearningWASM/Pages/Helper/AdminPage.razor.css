@@ -1,0 +1,68 @@
+﻿.main {
+    height: calc(100vh - 75px);
+    display:flex;
+}
+
+.main .my-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .my-container .info{
+    font-weight:bold;
+    color: var(--main-color);
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.main .my-container .module-card {
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    margin: 15px auto;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+    background-color: white;
+    border-radius: 6px;
+    transition: transform  var(--main-transition), box-shadow var(--main-transition);
+    transition: var(--main-transition);
+    cursor: pointer;
+    position: relative
+}
+
+.main .my-container .module-card:hover {
+    transform: translateY(-10px);
+}
+
+.main .my-container .module-card::before,
+.main .my-container .module-card::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 0;
+    background-color: var(--main-color);
+    transition: var(--main-transition);
+}
+.main .my-container .module-card::before {
+    top: 0;
+    right: 0;
+}
+.main .my-container .module-card::after {
+    bottom: 0;
+    left: 0;
+}
+.main .my-container .module-card:hover::before,
+.main .my-container .module-card:hover::after {
+    height: 100%;
+}
+
+.main .my-container .module-card h1 {
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.main .my-container .module-card p {
+    color: #777;
+}

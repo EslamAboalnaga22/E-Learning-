@@ -1,0 +1,60 @@
+﻿.manage-roles .my-container {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.manage-roles .my-container .border-line{
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    padding: 0 30px;
+}
+
+.manage-roles .my-container h1 {
+    padding: 20px 0;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.manage-roles .my-container .roles-card  {
+    text-align: center;
+}
+
+.manage-roles .my-container .roles-card h4 {
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    padding: 5px
+}
+
+.manage-roles .my-container .buttons {
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.manage-roles .my-container .manage {
+    text-align: center;
+    padding: 5px 0;
+    font-size:18px;
+}
+
+.manage-roles .my-container .buttons .save {
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+}
+
+.manage-roles .my-container .buttons .course {
+    border: 1px solid transparent;
+    font-size: 18px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: white;
+    color: var(--main-color);
+    font-weight: bold;
+}
