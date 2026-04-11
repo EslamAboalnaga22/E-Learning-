@@ -46,6 +46,47 @@ A robust, scalable, and user-friendly E-Learning management system built to stre
 |----------------|-----------------|
 | ![Main Page User](screenshots/Main-Page-as-User.png) | ![Main Page Admin](screenshots/Main-Paeg-as-Admin.png) |
 
+| Grade User | Grade Admin |
+|------------|-------------|
+| ![Grade User](screenshots/Grade-as-User.png) | ![Grade Admin](screenshots/Grade-as-Admin.png) |
+
+![Grade (Add)](screenshots/Add-Grade.png)
+![Grade (Update)](screenshots/Update-Grade.png)
+
+
+| Course User | Course Admin |
+|-------------|--------------|
+| ![Course User](screenshots/Course-as-User.png) | ![Course Admin](screenshots/Course-as-Admin.png) |
+
+![Course (Update)](screenshots/Update-Course.png)
+
+| Lesson User | Lesson Admin |
+|-------------|--------------|
+| ![Lesson User](screenshots/Lessons-as-User.png) | ![Lesson Admin](screenshots/Lessons-as-Admin.png) |
+
+![Lesson (Add)](screenshots/Add-Lesson.png)
+
+| Content User | Content Admin |
+|--------------|---------------|
+| ![Content User](screenshots/Content-Video-as-User.png) | ![Content Admin](screenshots/Update-Content.png) |
+
+![Content-pdf)](screenshots/Content-Pdf-as-User.png)
+
+![Content (Add))](screenshots/Add-Content.png)
+
+![Module (Update))](screenshots/Update-Module.png)
+
+![Forget Password)](screenshots/Forgett-Password.png)
+
+![Admin Control)](screenshots/Admin-Control.png)
+
+![User With Roles)](screenshots/Users%20With%20Roles.png)
+
+![Update Role User)](screenshots/Update-Roles-To-User.png)
+
+![Roles)](screenshots/Roles.png)
+
+![Add Roles)](screenshots/Add-Roles.png)
 
 ---
 
