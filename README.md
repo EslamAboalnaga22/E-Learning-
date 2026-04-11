@@ -76,11 +76,11 @@ A robust, scalable, and user-friendly E-Learning management system built to stre
 
 ![Module (Update))](screenshots/Update-Module.png)
 
-![Forget Password)](screenshots/Forgett-Password.png)
+![Forget Password)](screenshots/Forget-Passeord.png)
 
 ![Admin Control)](screenshots/Admin-Control.png)
 
-![User With Roles)](screenshots/Users%20With%20Roles.png)
+![User With Roles)](screenshots/Users%20with%20Roles.png)
 
 ![Update Role User)](screenshots/Update-Roles-To-User.png)
 
