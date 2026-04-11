@@ -32,6 +32,19 @@ A robust, scalable, and user-friendly E-Learning management system built to stre
 ---
 
 ## 📸 Screenshots
+### Api Contorllers
+![Api 1](screenshots/API-ELearning-1.png) 
+![Api 2](screenshots/API-ELearning-2.png)
+![Api 2](screenshots/API-ELearning-3.png)
+![Api 2](screenshots/API-ELearning-4.png)
+
+| Register Page | Login Page |
+|---------------|------------|
+| ![Register](screenshots/Register.png) | ![Login](screenshots/Login.png) |
+
+| Main Page User | Main Page Admin |
+|----------------|-----------------|
+| ![Main Page User](screenshots/Main-Page-as-User.png) | ![Main Page Admin](screenshots/Main-Paeg-as-Admin.png) |
 
 
 ---
